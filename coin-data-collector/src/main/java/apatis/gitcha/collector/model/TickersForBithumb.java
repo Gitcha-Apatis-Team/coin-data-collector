@@ -4,11 +4,9 @@ import lombok.Data;
 import lombok.ToString;
 
 @Data
-@ToString
 public class TickersForBithumb {
-	TickerNestForBithumb data;
-	String status;
-	
+	private TickerNestForBithumb data;
+	private String status;
 	
 	@Override
 	public String toString() {

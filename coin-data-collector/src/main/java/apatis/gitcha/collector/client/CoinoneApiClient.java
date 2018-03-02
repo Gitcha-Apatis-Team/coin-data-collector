@@ -8,7 +8,12 @@ import apatis.gitcha.collector.model.TickerForCoinone;
 import apatis.gitcha.collector.model.TickersForCoinone;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Mono;
-
+/**
+ * 
+ * @author ByeongGiKim
+ * 
+ *
+ */
 @Component
 @Slf4j 
 public class CoinoneApiClient {
@@ -17,7 +22,7 @@ public class CoinoneApiClient {
 
 	public Mono<TickerForCoinone> getTicker(String currency) {
 		 
-		log.info("getTicker [ "  + currency);
+		if (log.isDebugEnabled()) log.debug("Parameter[currency] :"  + currency);
 		
 		return WebClient
 				.create(API_URL)

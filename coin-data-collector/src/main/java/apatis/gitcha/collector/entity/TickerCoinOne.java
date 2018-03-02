@@ -2,15 +2,16 @@ package apatis.gitcha.collector.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Data;
 
 @Entity
 @Data
-public class Ticker {
-	@Id
-	@GeneratedValue 
+public class TickerCoinOne {
+	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	public Long id;
 	
 	private String errorCode;

@@ -1,33 +1,34 @@
 package apatis.gitcha.collector.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import apatis.gitcha.collector.entity.TickerBithumb;
 import lombok.Data;
-import lombok.ToString;
-@Entity
-@Table(name = "coinInfo")
 @Data
-@ToString
 public class TickerForBithumb {
-	@Id
-	@GeneratedValue
-	Long id;
-	String opening_price;
-	String average_price;
-	String buy_price;
-	String closing_price;
-	String max_price;
-	String min_price;
-	String sell_price;
-	String units_traded;
-	String volume_1day;
-	String volume_7day;
+
+	private String opening_price;
+	private String average_price;
+	private String buy_price;
+	private String closing_price;
+	private String max_price;
+	private String min_price;
+	private String sell_price;
+	private String units_traded;
+	private String volume_1day;
+	private String volume_7day;
 	
-	
-	
-	
+	public TickerBithumb getTicker() {
+		TickerBithumb tickerBithumb = new TickerBithumb();
+		tickerBithumb.setOpening_price(this.opening_price);
+		tickerBithumb.setAverage_price(this.average_price);
+		tickerBithumb.setBuy_price(this.buy_price);
+		tickerBithumb.setClosing_price(this.closing_price);
+		tickerBithumb.setMax_price(this.max_price);
+		tickerBithumb.setMin_price(this.min_price);
+		tickerBithumb.setSell_price(this.sell_price);
+		tickerBithumb.setUnits_traded(this.units_traded);
+		tickerBithumb.setVolume_1day(this.volume_1day);
+		tickerBithumb.setVolume_7day(this.volume_7day);
+		return tickerBithumb;
+	}
 	
 }

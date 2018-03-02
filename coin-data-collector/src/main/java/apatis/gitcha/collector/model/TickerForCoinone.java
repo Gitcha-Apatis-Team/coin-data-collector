@@ -2,7 +2,7 @@ package apatis.gitcha.collector.model;
 
 import java.io.Serializable;
 
-import apatis.gitcha.collector.entity.Ticker;
+import apatis.gitcha.collector.entity.TickerCoinOne;
 import lombok.Data;
 
 @Data
@@ -25,8 +25,8 @@ public class TickerForCoinone implements Serializable{
 	private Long timestamp;
 	private String currency;
 	
-	public Ticker getTicker() {
-		Ticker ticker = new Ticker();
+	public TickerCoinOne getTicker() {
+		TickerCoinOne ticker = new TickerCoinOne();
 		ticker.setErrorCode(this.errorCode);
 		ticker.setResult(this.result);
 
@@ -42,7 +42,7 @@ public class TickerForCoinone implements Serializable{
 		ticker.setYesterday_last(this.yesterday_last);
 		ticker.setYesterday_volume(this.yesterday_volume);
 		
-		ticker.setTimestamp(this.timestamp);
+		
 		ticker.setCurrency(this.currency);
 		return ticker;
 	}
